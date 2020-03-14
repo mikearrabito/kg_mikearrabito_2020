@@ -7,12 +7,11 @@ def has_mapping(arg):
     if len(s1) != len(s2):
         return False
 
-    used = set()
     map = {}
     i = 0
 
     for char in s1:
-        if char in used and map[char] != s2[i]:
+        if char in map and map[char] != s2[i]:
             """
             If we have used a char from s1 and mapped it already
             return false, since we are mapping the same character from s1 twice,
@@ -24,10 +23,8 @@ def has_mapping(arg):
             """
             Mapping char from s1 to s2, adding to list of used chars (from s1)
             """
-            used.add(char)
-
-        map[char] = s2[i]
-        i += 1
+            map[char] = s2[i]
+            i += 1
 
     # print(map)
     return True
