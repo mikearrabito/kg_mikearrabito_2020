@@ -35,7 +35,7 @@ def has_mapping(arg):
 
 args = sys.argv[1:]
 
-if len(args) == 0 or len(args) > 2:
+if len(args) != 2:
     print("Invalid input (please input 2 strings)")
     exit(-1)
 
